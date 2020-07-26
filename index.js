@@ -70,3 +70,12 @@ person.hobbies.one = "surfing";
 copiedPerson.hobbies.one = "playing";
 console.log(person);
 console.log(copiedPerson);
+
+// deep copy using parsing and stringify
+const dataStore ={name : "urmella",dairy:{write:"secrets",schedule:"timeTable"}};
+const copiedDataStore = JSON.parse(JSON.stringify(dataStore));
+console.log(dataStore);
+console.log(copiedDataStore);
+dataStore.dairy.write = "code";
+console.log(dataStore);
+console.log(copiedDataStore);
