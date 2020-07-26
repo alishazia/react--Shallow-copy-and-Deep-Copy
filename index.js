@@ -35,7 +35,38 @@ console.log(person);
 console.log(copiedPerson);
 // copiedPerson = person;
 person = copiedPerson;
-// person.name = "sahil"
-copiedPerson.name = "sahil"
+// person.name = "ali"
+copiedPerson.name = "ali"
+console.log(person);
+console.log(copiedPerson);
+
+// shallow copy and deep copy with spread operators with arrays and objects
+const person = {name :"shazia",age:"23"};
+// Deep copy
+const copiedPerson = {...person}; //will not effect copied Array
+person.name = "najar"
+console.log(person);
+console.log(copiedPerson);
+person = copiedPerson;
+// shallow copy
+person.name = "ali"
+console.log(person);
+console.log(copiedPerson);
+
+const person = {name :"shazia",age:"23",hobbies:{one :"playing",two:"reading"}};
+// deep copy for name property and shallow copy for hobbies
+const copiedPerson = {...person};
+console.log(person);
+console.log(copiedPerson);
+// again deep copy for name and shallow copy for hobbies
+person.name = "najar";
+person.hobbies.one = "travelling";
+console.log(person);
+console.log(copiedPerson);
+
+// creating Deep copy for hobbies also
+const copiedPerson = {...person,hobbies:{...person.hobbies}};
+person.hobbies.one = "surfing";
+copiedPerson.hobbies.one = "playing";
 console.log(person);
 console.log(copiedPerson);
